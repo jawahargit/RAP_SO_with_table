@@ -1,0 +1,19 @@
+@EndUserText.label : 'Draft table for entity ZI_UXTEAM_5551'
+@AbapCatalog.enhancement.category : #EXTENSIBLE_ANY
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdr_uxteam_5551 {
+  key mandt          : mandt not null;
+  key id             : sysuuid_x16 not null;
+  firstname          : abap.char(100);
+  lastname           : abap.char(100);
+  age                : abap.numc(4);
+  role               : abap.char(100);
+  salary             : abap.numc(4);
+  active             : abap_boolean;
+  lastchangedat      : timestampl;
+  locallastchangedat : timestampl;
+  "%admin"           : include sych_bdl_draft_admin_inc;
+
+}

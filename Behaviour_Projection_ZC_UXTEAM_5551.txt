@@ -1,0 +1,16 @@
+projection;
+use draft;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZC_UXTEAM_5551 alias UXTeam
+use etag // etag is basically Used to get rid of conflicts when more users try to change BO
+{
+  use create;
+  use update;
+  use action setActive;
+}
+
+// here basically in this Projection Behaviour Definition
+// we are projecting only Create , update , delete and Actions (set Active is method name for action button on UI)
+//and we didnt project Determination, Validation because those has to happen always ..
+// so if we dont project here something means -> it is automaticlly considered
